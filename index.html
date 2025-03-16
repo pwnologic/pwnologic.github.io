@@ -9,57 +9,42 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: monospace;
             overflow: hidden;
+            font-family: monospace;
         }
         
         .container {
             display: flex;
+            flex-direction: column;
             height: 100vh;
-        }
-        
-        .sidebar {
-            width: 250px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 40px 20px;
-            box-sizing: border-box;
-            border-right: 1px solid #ddd;
-        }
-        
-        .logo {
-            font-size: 24px;
-            margin-bottom: 40px;
-        }
-        
-        .nav {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: auto;
-        }
-        
-        .nav a {
-            margin-bottom: 15px;
-            text-decoration: none;
-            color: #333;
-        }
-        
-        .nav a:hover {
-            text-decoration: underline;
-        }
-        
-        .copyright {
-            font-size: 12px;
-            color: #666;
-        }
-        
-        .content {
-            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            overflow: hidden;
             position: relative;
-            height: 100%;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        .hero-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
             cursor: pointer;
+            z-index: 1;
         }
         
         .hero-image {
@@ -70,39 +55,86 @@
         
         .click-text {
             position: absolute;
-            top: 50%;
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
+            background-color: transparent;
             color: #888888;
             font-family: monospace;
             font-size: 24px;
             padding: 10px 20px;
             border: 1px solid #888888;
-            background-color: transparent;
+        }
+        
+        .content {
+            padding: 20px;
+            line-height: 1.5;
+            display: none;
+            overflow-y: auto;
+            height: 100%;
+        }
+        
+        a {
+            margin-right: 15px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .visible {
+            display: block;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div>
-                <div class="logo">pwnologic</div>
-                <nav class="nav">
-                    <a href="index.html">Home</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-            </div>
-            <div class="copyright">© 2025 pwnologic</div>
+        <!-- Header always visible -->
+        <div class="header">
+            <h1>pwnologic</h1>
         </div>
         
-        <!-- Main Content with Image -->
-        <div class="content" onclick="location.href='https://www.youtube.com/watch?v=uvxkEvM81tU&pp=ygUcZ2l2aW5nIGJhZCBwZW9wbGUgZ29vZCBpZGVhcw%3D%3D';">
+        <!-- Hero image container -->
+        <div id="hero-container" class="hero-container" onclick="showContent()">
             <img src="https://rare-gallery.com/mocahbig/477327-technology-Retro-computers-simple-Apple-Computer.jpg" alt="Cybersecurity visualization" class="hero-image">
-            <div class="click-text">CLICK ME!</div>
+            <div class="click-text">[][][][][][][][][]</div>
+        </div>
+        
+        <!-- Main content initially hidden -->
+        <div id="content" class="content">
+            <section>
+                <h2>Cybersecurity Research Collective</h2>
+                <p>Developing defensive security tools and conducting specialized research.</p>
+            </section>
+            
+            <section id="about">
+                <h2>About</h2>
+                <p>Initiative focused on identifying vulnerabilities in emerging technologies and developing open-source defensive tools.</p>
+            </section>
+            
+            <section id="join">
+                <h2>Join</h2>
+                <p>Please contact us for any inquiries.</p>
+            </section>
+            
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>Email: vgovardhanen@gmail.com</p>
+            </section>
+            
+            <hr>
+            
+            <footer>
+                <p>© 2025 pwnologic</p>
+            </footer>
         </div>
     </div>
+    <script>
+        function showContent() {
+            document.getElementById('hero-container').classList.add('hidden');
+            document.getElementById('content').classList.add('visible');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 </body>
 </html>

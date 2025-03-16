@@ -15,11 +15,16 @@
         a {
             margin-right: 15px;
         }
+        .hero-container {
+            position: relative;
+            height: 100vh; /* Full viewport height */
+            width: 100%;
+            margin-bottom: 20px;
+        }
         .hero-image {
             width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            margin: 20px 0;
+            height: 100%;
+            object-fit: cover; /* Cover the entire container */
         }
     </style>
 </head>
@@ -34,8 +39,10 @@
     
     <hr>
     
-
-    <img src="knee.png" alt="Cybersecurity visualization" class="hero-image">
+    <!-- Full viewport height hero image -->
+    <div class="hero-container">
+        <img src="https://rare-gallery.com/mocahbig/477327-technology-Retro-computers-simple-Apple-Computer.jpg" alt="Cybersecurity visualization" class="hero-image">
+    </div>
     
     <main>
         <section>

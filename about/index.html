@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>pwnologic - about</title>
+    <style>
+        body {
+            font-family: monospace;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        a {
+            margin-right: 15px;
+        }
+        hr {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>pwnologic</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a id="contact" onclick="showEmail(event)">Contact</a>
+        </nav>
+    </header>
+    
+    <hr>
+    
+    <main>
+        <section>
+            <h2>About pwnologic</h2>
+            
+            <p>Initiative focused on identifying vulnerabilities in emerging technologies and developing open-source defensive tools.</p>
+            
+            <p>Founded in 2025, pwnologic brings together security researchers and developers with a shared commitment to improving digital security.</p>
+            
+            <p>Our primary areas of focus:</p>
+            <ul>
+                <li>AI Security Research - Investigating vulnerabilities in machine learning models and developing frameworks for ethical AI security testing.</li>
+                <li>IoT Security Testing - Creating standardized methodologies for assessing smart device security and publishing findings to improve the ecosystem.</li>
+                <li>Open-Source Monitoring - Building lightweight security tools that enable organizations of all sizes to detect and respond to threats.</li>
+            </ul>
+            
+            <p>We operate with a minimalist approach, focusing on efficiency and practical solutions rather than complexity.</p>
+            
+            <p>pwnologic is committed to responsible disclosure and collaborates with manufacturers and developers to address vulnerabilities before public release.</p>
+        </section>
+    </main>
+    
+    <hr>
+    
+    <footer>
+        <p>© 2025 pwnologic</p>
+    </footer>
+
+    <script>
+        function showEmail(event) {
+            event.preventDefault();
+            document.getElementById('contact').innerHTML = 'vgovardhanen@gmail.com';
+        }
+    </script>
+</body>
+</html>
